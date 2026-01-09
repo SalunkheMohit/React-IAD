@@ -4,10 +4,13 @@ import KPICard from './component/KPICard.jsx'
 import ChartCard from './component/ChartCard.jsx'
 import DataTable  from './component/DataTable.jsx'
 import { salesData,tableData } from './data.js'
+import { useApi } from './hooks/useApi.js'
+import { DollarSign, Users, ShoppingCart, TrendingUp} from 'lucide-react';
 
 
 export default function App() {
   
+  const users = useApi('https://jsonplaceholder.typicode.com/users');
 
   return (
     <div className='min-h-screen bg-gray-100'>
@@ -15,14 +18,36 @@ export default function App() {
       <div className='flex'>
       <Sidebar />
       <main className='flex-1 p-6 space-y-6'>
+
         <div className='grid grid-cols-1 md:grid-cols-4 gap-4'>
-      <KPICard lable='Total Revenue' value='$120,000' />
-      <KPICard lable='Active Users' value='1,200' />
-      <KPICard lable='Orders' value='320' />
-      <KPICard lable='Conversion Rate' value='3.2%' />
+
+          <KPICard
+           label='Total Revenue'
+           value={120000}
+           icon={DollarSign}
+           color='bg-green-500'
+           />
+          <KPICard
+           label='Active Users'
+           value={1200}
+           icon={Users}
+           color="bg-blue-500"
+           />
+          <KPICard
+           label='Orders'
+           value={320}
+           icon={ShoppingCart}
+           color="bg-purple-500"
+           />
+          <KPICard
+           label='Conversion Rate'
+           value={3.2}
+           icon={TrendingUp}
+           color="bg-orange-500"
+           />
         </div>
-      <ChartCard data={salesData} />
-      <DataTable rows={tableData} />
+          <ChartCard data={salesData} />
+          <DataTable rows={tableData} />
       </main>
       </div>
 
