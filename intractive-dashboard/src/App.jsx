@@ -5,7 +5,13 @@ import ChartCard from './component/ChartCard.jsx'
 import DataTable  from './component/DataTable.jsx'
 import { salesData,tableData } from './data.js'
 import { useApi } from './hooks/useApi.js'
-import { DollarSign, Users, ShoppingCart, TrendingUp} from 'lucide-react';
+import { DollarSign, Users, ShoppingCart, TrendingUp} from 'lucide-react'
+import Login from "./Component/Login"
+import { Routes, Route } from "react-router-dom"
+import Dashboard from './Component/Dashboard.jsx'
+import ProtectedRoute from './routes/ProtectedRoute.jsx'
+
+
 
 
 export default function App() {
@@ -48,8 +54,18 @@ export default function App() {
         </div>
           <ChartCard data={salesData} />
           <DataTable rows={tableData} />
-      </main>
+      </main>      
       </div>
+             
+             <Routes>
+                   <Route path= "/login" element={<Login />} />
+                     <Route path= "/" element={
+                       <ProtectedRoute>
+                         <Dashboard />
+                       </ProtectedRoute>
+                                              } 
+                    />
+                 </Routes>
 
     </div>
   );
