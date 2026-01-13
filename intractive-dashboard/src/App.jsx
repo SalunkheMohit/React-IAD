@@ -6,10 +6,7 @@ import DataTable  from './components/DataTable.jsx'
 import { salesData,tableData } from './data.js'
 import { useApi } from './hooks/useApi.js'
 import { DollarSign, Users, ShoppingCart, TrendingUp} from 'lucide-react'
-import Login from "./components/Login.jsx"
-import { Routes, Route } from "react-router-dom"
-import Dashboard from './components/Dashboard.jsx'
-import ProtectedRoute from './routes/ProtectedRoute.jsx'
+
 
 
 
@@ -57,15 +54,7 @@ export default function App() {
       </main>      
       </div>
              
-             <Routes>
-                   <Route path= "/login" element={<Login />} />
-                     <Route path= "/" element={
-                       <ProtectedRoute>
-                         <Dashboard />
-                       </ProtectedRoute>
-                                              } 
-                    />
-                 </Routes>
+             
 
     </div>
   );

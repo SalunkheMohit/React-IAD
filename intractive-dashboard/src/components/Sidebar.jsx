@@ -1,5 +1,11 @@
+import Login from "./Login.jsx"
+import { Routes, Route } from "react-router-dom"
+import Dashboard from './Dashboard.jsx'
+import ProtectedRoute from '../routes/ProtectedRoute.jsx'
+
 const Sidebar = () => {
     return (
+        
         <aside className="bg-gray-900 text-gray-200 w-60 h-full-screen p-6 hidden md:block">
             <h2 className="text-lg font-semibold mb-6">Menu</h2>
             <ul className="space-y-3">
@@ -7,7 +13,20 @@ const Sidebar = () => {
                 <li className="hover:text-white">Reports</li>
                 <li className="hover:text-white">Settings</li>
             </ul>
-        </aside>
+        
+        <div className="mt-16">
+        <Routes>
+                   <Route path= "/login" element={<Login />} />
+                     <Route path= "/" element={
+                       <ProtectedRoute>
+                         <Dashboard />
+                       </ProtectedRoute>
+                                              } 
+                    />
+                 </Routes>
+                 </div>
+                 </aside>
+                
     );
 };
 
