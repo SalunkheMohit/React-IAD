@@ -1,14 +1,14 @@
-import Navbar from './Components/Navbar.jsx'
-import Sidebar from './Components/Sidebar.jsx'
-import KPICard from './Components/KPICard.js'
-import ChartCard from './Components/ChartCard.js'
-import DataTable  from './Components/DataTable.js'
+import Navbar from './component/Navbar.jsx'
+import Sidebar from './component/Sidebar.jsx'
+import KPICard from './component/KPICard.jsx'
+import ChartCard from './component/ChartCard.jsx'
+import DataTable  from './component/DataTable.jsx'
 import { salesData,tableData } from './data.js'
 import { useApi } from './hooks/useApi.js'
 import { DollarSign, Users, ShoppingCart, TrendingUp} from 'lucide-react'
-import Login from "./Components/Login.js"
+import Login from "./component/Login.jsx"
 import { Routes, Route } from "react-router-dom"
-import Dashboard from './Components/Dashboard.js'
+import Dashboard from './component/Dashboard.jsx'
 import ProtectedRoute from './routes/ProtectedRoute.jsx'
 
 
